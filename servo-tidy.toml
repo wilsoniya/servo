@@ -37,6 +37,12 @@ packages = [
   "bitflags",
   "error-chain",
   "libloading", # Conflicting version is only used at build-time by geckolib.
+  "mime",
+  "mp4parse",
+  "semver",
+  "serde",
+  "toml",
+  "unicase",
 ]
 # Files that are ignored for all tidy and lint checks.
 files = [
