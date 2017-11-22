@@ -6,7 +6,7 @@
 
 #![deny(missing_docs)]
 
-use cssparser::{Parser as CssParser, ParserInput};
+use cssparser::{serialize_identifier, Parser as CssParser, ParserInput};
 use selectors::parser::SelectorList;
 use std::fmt::{self, Debug, Write};
 use style_traits::{CssWriter, ParseError, ToCss};
@@ -207,6 +207,6 @@ impl ToCss for Direction {
             // FIXME: This should be escaped as an identifier; see #19231
             Direction::Other(ref other) => other,
         };
-        dest.write_str(dir_str)
+        serialize_identifier(dir_str, dest)
     }
 }

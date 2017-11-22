@@ -27,4 +27,6 @@ fn test_selectors() {
     assert_roundtrip!(parse_selector, "[border=\"0\"]:-servo-nonzero-border ~ ::-servo-details-summary");
     assert_roundtrip!(parse_selector, "* > *");
     assert_roundtrip!(parse_selector, "*|* + *", "* + *");
+
+    assert_roundtrip!(parse_selector, "dir(ltr)");
 }
